@@ -26,10 +26,10 @@
       HERE LIST OF TAGS
     </a>
   </div>
-  <!-- <mc-pagination
-    [total]="(feed$ | async)?.articlesCount"
+  <mc-pagination
+    [total]="(feed$ | async)!.articlesCount"
     [limit]="limit"
     [url]="baseUrl"
     [currentPage]="currentPage"
-  ></mc-pagination> -->
+  ></mc-pagination>
 </div>
