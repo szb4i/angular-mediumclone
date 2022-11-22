@@ -13,6 +13,7 @@ import { GlobalFeedModule } from 'src/app/globalFeed/globalFeed.module';
 import { TopBarModule } from 'src/app/shared/modules/topBar/topBar.module';
 import { PersistanceService } from 'src/app/shared/services/persistance.service';
 import { AuthInterceptorService } from 'src/app/shared/services/authInterceptor.service';
+import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,8 @@ import { AuthInterceptorService } from 'src/app/shared/services/authInterceptor.
     HttpClientModule,
     AppRoutingModule,
     AuthModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({ router: routerReducer }),
+    StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production // Restrict extension to log-only mode
